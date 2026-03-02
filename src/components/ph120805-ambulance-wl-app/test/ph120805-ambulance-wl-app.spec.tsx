@@ -10,7 +10,7 @@ describe('ph120805-ambulance-wl-app', () => {
     expect(page.root).toEqualHtml(`
       <ph120805-ambulance-wl-app>
         <mock:shadow-root>
-          <slot></slot>
+          <ph120805-ambulance-wl-list></ph120805-ambulance-wl-list>
         </mock:shadow-root>
       </ph120805-ambulance-wl-app>
     `);
