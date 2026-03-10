@@ -32,6 +32,10 @@ export namespace Components {
         "entryId": string;
     }
 }
+export interface PhAmbulanceWlListCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPhAmbulanceWlListElement;
+}
 export interface Ph120805AmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPh120805AmbulanceWlEditorElement;
@@ -43,7 +47,18 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLPhAmbulanceWlListElementEventMap {
+        "entry-clicked": string;
+    }
     interface HTMLPhAmbulanceWlListElement extends Components.PhAmbulanceWlList, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPhAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLPhAmbulanceWlListElement, ev: PhAmbulanceWlListCustomEvent<HTMLPhAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPhAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLPhAmbulanceWlListElement, ev: PhAmbulanceWlListCustomEvent<HTMLPhAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPhAmbulanceWlListElement: {
         prototype: HTMLPhAmbulanceWlListElement;
@@ -95,6 +110,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface PhAmbulanceWlList {
+        "onEntry-clicked"?: (event: PhAmbulanceWlListCustomEvent<string>) => void;
     }
     interface Ph120805AmbulanceWlApp {
         /**
