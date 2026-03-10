@@ -23,6 +23,8 @@ export namespace Components {
     interface PhAmbulanceWlList {
     }
     interface Ph120805AmbulanceWlApp {
+        "ambulanceId": string;
+        "apiBase": string;
         /**
           * @default ""
          */
@@ -32,6 +34,8 @@ export namespace Components {
         "entryId": string;
     }
     interface Ph120805AmbulanceWlList {
+        "ambulanceId": string;
+        "apiBase": string;
     }
 }
 export interface PhAmbulanceWlListCustomEvent<T> extends CustomEvent<T> {
@@ -137,6 +141,8 @@ declare namespace LocalJSX {
         "onEntry-clicked"?: (event: PhAmbulanceWlListCustomEvent<string>) => void;
     }
     interface Ph120805AmbulanceWlApp {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         /**
           * @default ""
          */
@@ -147,6 +153,8 @@ declare namespace LocalJSX {
         "onEditor-closed"?: (event: Ph120805AmbulanceWlEditorCustomEvent<string>) => void;
     }
     interface Ph120805AmbulanceWlList {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "onEntry-clicked"?: (event: Ph120805AmbulanceWlListCustomEvent<string>) => void;
     }
 
@@ -157,9 +165,15 @@ declare namespace LocalJSX {
     }
     interface Ph120805AmbulanceWlAppAttributes {
         "basePath": string;
+        "apiBase": string;
+        "ambulanceId": string;
     }
     interface Ph120805AmbulanceWlEditorAttributes {
         "entryId": string;
+    }
+    interface Ph120805AmbulanceWlListAttributes {
+        "apiBase": string;
+        "ambulanceId": string;
     }
 
     interface IntrinsicElements {
@@ -167,7 +181,7 @@ declare namespace LocalJSX {
         "ph-ambulance-wl-list": PhAmbulanceWlList;
         "ph120805-ambulance-wl-app": Omit<Ph120805AmbulanceWlApp, keyof Ph120805AmbulanceWlAppAttributes> & { [K in keyof Ph120805AmbulanceWlApp & keyof Ph120805AmbulanceWlAppAttributes]?: Ph120805AmbulanceWlApp[K] } & { [K in keyof Ph120805AmbulanceWlApp & keyof Ph120805AmbulanceWlAppAttributes as `attr:${K}`]?: Ph120805AmbulanceWlAppAttributes[K] } & { [K in keyof Ph120805AmbulanceWlApp & keyof Ph120805AmbulanceWlAppAttributes as `prop:${K}`]?: Ph120805AmbulanceWlApp[K] };
         "ph120805-ambulance-wl-editor": Omit<Ph120805AmbulanceWlEditor, keyof Ph120805AmbulanceWlEditorAttributes> & { [K in keyof Ph120805AmbulanceWlEditor & keyof Ph120805AmbulanceWlEditorAttributes]?: Ph120805AmbulanceWlEditor[K] } & { [K in keyof Ph120805AmbulanceWlEditor & keyof Ph120805AmbulanceWlEditorAttributes as `attr:${K}`]?: Ph120805AmbulanceWlEditorAttributes[K] } & { [K in keyof Ph120805AmbulanceWlEditor & keyof Ph120805AmbulanceWlEditorAttributes as `prop:${K}`]?: Ph120805AmbulanceWlEditor[K] };
-        "ph120805-ambulance-wl-list": Ph120805AmbulanceWlList;
+        "ph120805-ambulance-wl-list": Omit<Ph120805AmbulanceWlList, keyof Ph120805AmbulanceWlListAttributes> & { [K in keyof Ph120805AmbulanceWlList & keyof Ph120805AmbulanceWlListAttributes]?: Ph120805AmbulanceWlList[K] } & { [K in keyof Ph120805AmbulanceWlList & keyof Ph120805AmbulanceWlListAttributes as `attr:${K}`]?: Ph120805AmbulanceWlListAttributes[K] } & { [K in keyof Ph120805AmbulanceWlList & keyof Ph120805AmbulanceWlListAttributes as `prop:${K}`]?: Ph120805AmbulanceWlList[K] };
     }
 }
 export { LocalJSX as JSX };
