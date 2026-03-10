@@ -1,7 +1,7 @@
 import { Component, Event, EventEmitter, Host, State, h } from '@stencil/core';
 
 @Component({
-  tag: 'ph-ambulance-wl-list',
+  tag: 'ph120805-ambulance-wl-list',
   styleUrl: 'ph-ambulance-wl-list.css',
   shadow: true,
 })

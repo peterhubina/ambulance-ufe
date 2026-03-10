@@ -57,8 +57,8 @@ export class Ph120805AmbulanceWlApp {
         ? <ph120805-ambulance-wl-editor entry-id={entryId}
             oneditor-closed={ () => navigate("./list")} >
           </ph120805-ambulance-wl-editor>
-        : <ph-ambulance-wl-list onentry-clicked={ (ev: CustomEvent<string>)=> navigate("./entry/" + ev.detail) } >
-        </ph-ambulance-wl-list>
+        : <ph120805-ambulance-wl-list onentry-clicked={ (ev: CustomEvent<string>)=> navigate("./entry/" + ev.detail) } >
+        </ph120805-ambulance-wl-list>
         }
   
       </Host>
