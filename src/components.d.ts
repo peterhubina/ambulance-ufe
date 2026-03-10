@@ -20,8 +20,6 @@ export namespace Components {
          */
         "middle": string;
     }
-    interface PhAmbulanceWlList {
-    }
     interface Ph120805AmbulanceWlApp {
         "ambulanceId": string;
         "apiBase": string;
@@ -31,16 +29,14 @@ export namespace Components {
         "basePath": string;
     }
     interface Ph120805AmbulanceWlEditor {
+        "ambulanceId": string;
+        "apiBase": string;
         "entryId": string;
     }
     interface Ph120805AmbulanceWlList {
         "ambulanceId": string;
         "apiBase": string;
     }
-}
-export interface PhAmbulanceWlListCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLPhAmbulanceWlListElement;
 }
 export interface Ph120805AmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -56,23 +52,6 @@ declare global {
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
-    };
-    interface HTMLPhAmbulanceWlListElementEventMap {
-        "entry-clicked": string;
-    }
-    interface HTMLPhAmbulanceWlListElement extends Components.PhAmbulanceWlList, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLPhAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLPhAmbulanceWlListElement, ev: PhAmbulanceWlListCustomEvent<HTMLPhAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLPhAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLPhAmbulanceWlListElement, ev: PhAmbulanceWlListCustomEvent<HTMLPhAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-    }
-    var HTMLPhAmbulanceWlListElement: {
-        prototype: HTMLPhAmbulanceWlListElement;
-        new (): HTMLPhAmbulanceWlListElement;
     };
     interface HTMLPh120805AmbulanceWlAppElement extends Components.Ph120805AmbulanceWlApp, HTMLStencilElement {
     }
@@ -116,7 +95,6 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
-        "ph-ambulance-wl-list": HTMLPhAmbulanceWlListElement;
         "ph120805-ambulance-wl-app": HTMLPh120805AmbulanceWlAppElement;
         "ph120805-ambulance-wl-editor": HTMLPh120805AmbulanceWlEditorElement;
         "ph120805-ambulance-wl-list": HTMLPh120805AmbulanceWlListElement;
@@ -137,9 +115,6 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
-    interface PhAmbulanceWlList {
-        "onEntry-clicked"?: (event: PhAmbulanceWlListCustomEvent<string>) => void;
-    }
     interface Ph120805AmbulanceWlApp {
         "ambulanceId"?: string;
         "apiBase"?: string;
@@ -149,6 +124,8 @@ declare namespace LocalJSX {
         "basePath"?: string;
     }
     interface Ph120805AmbulanceWlEditor {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "entryId"?: string;
         "onEditor-closed"?: (event: Ph120805AmbulanceWlEditorCustomEvent<string>) => void;
     }
@@ -170,6 +147,8 @@ declare namespace LocalJSX {
     }
     interface Ph120805AmbulanceWlEditorAttributes {
         "entryId": string;
+        "ambulanceId": string;
+        "apiBase": string;
     }
     interface Ph120805AmbulanceWlListAttributes {
         "apiBase": string;
@@ -178,7 +157,6 @@ declare namespace LocalJSX {
 
     interface IntrinsicElements {
         "my-component": Omit<MyComponent, keyof MyComponentAttributes> & { [K in keyof MyComponent & keyof MyComponentAttributes]?: MyComponent[K] } & { [K in keyof MyComponent & keyof MyComponentAttributes as `attr:${K}`]?: MyComponentAttributes[K] } & { [K in keyof MyComponent & keyof MyComponentAttributes as `prop:${K}`]?: MyComponent[K] };
-        "ph-ambulance-wl-list": PhAmbulanceWlList;
         "ph120805-ambulance-wl-app": Omit<Ph120805AmbulanceWlApp, keyof Ph120805AmbulanceWlAppAttributes> & { [K in keyof Ph120805AmbulanceWlApp & keyof Ph120805AmbulanceWlAppAttributes]?: Ph120805AmbulanceWlApp[K] } & { [K in keyof Ph120805AmbulanceWlApp & keyof Ph120805AmbulanceWlAppAttributes as `attr:${K}`]?: Ph120805AmbulanceWlAppAttributes[K] } & { [K in keyof Ph120805AmbulanceWlApp & keyof Ph120805AmbulanceWlAppAttributes as `prop:${K}`]?: Ph120805AmbulanceWlApp[K] };
         "ph120805-ambulance-wl-editor": Omit<Ph120805AmbulanceWlEditor, keyof Ph120805AmbulanceWlEditorAttributes> & { [K in keyof Ph120805AmbulanceWlEditor & keyof Ph120805AmbulanceWlEditorAttributes]?: Ph120805AmbulanceWlEditor[K] } & { [K in keyof Ph120805AmbulanceWlEditor & keyof Ph120805AmbulanceWlEditorAttributes as `attr:${K}`]?: Ph120805AmbulanceWlEditorAttributes[K] } & { [K in keyof Ph120805AmbulanceWlEditor & keyof Ph120805AmbulanceWlEditorAttributes as `prop:${K}`]?: Ph120805AmbulanceWlEditor[K] };
         "ph120805-ambulance-wl-list": Omit<Ph120805AmbulanceWlList, keyof Ph120805AmbulanceWlListAttributes> & { [K in keyof Ph120805AmbulanceWlList & keyof Ph120805AmbulanceWlListAttributes]?: Ph120805AmbulanceWlList[K] } & { [K in keyof Ph120805AmbulanceWlList & keyof Ph120805AmbulanceWlListAttributes as `attr:${K}`]?: Ph120805AmbulanceWlListAttributes[K] } & { [K in keyof Ph120805AmbulanceWlList & keyof Ph120805AmbulanceWlListAttributes as `prop:${K}`]?: Ph120805AmbulanceWlList[K] };
@@ -189,7 +167,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.IntrinsicElements["my-component"] & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "ph-ambulance-wl-list": LocalJSX.IntrinsicElements["ph-ambulance-wl-list"] & JSXBase.HTMLAttributes<HTMLPhAmbulanceWlListElement>;
             "ph120805-ambulance-wl-app": LocalJSX.IntrinsicElements["ph120805-ambulance-wl-app"] & JSXBase.HTMLAttributes<HTMLPh120805AmbulanceWlAppElement>;
             "ph120805-ambulance-wl-editor": LocalJSX.IntrinsicElements["ph120805-ambulance-wl-editor"] & JSXBase.HTMLAttributes<HTMLPh120805AmbulanceWlEditorElement>;
             "ph120805-ambulance-wl-list": LocalJSX.IntrinsicElements["ph120805-ambulance-wl-list"] & JSXBase.HTMLAttributes<HTMLPh120805AmbulanceWlListElement>;

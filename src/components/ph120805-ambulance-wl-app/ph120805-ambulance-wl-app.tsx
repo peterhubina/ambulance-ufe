@@ -58,6 +58,7 @@ export class Ph120805AmbulanceWlApp {
       <Host>
         { element === "editor"
         ? <ph120805-ambulance-wl-editor entry-id={entryId}
+            ambulance-id={this.ambulanceId} api-base={this.apiBase}
             oneditor-closed={ () => navigate("./list")} >
           </ph120805-ambulance-wl-editor>
         : <ph120805-ambulance-wl-list ambulance-id={this.ambulanceId} api-base={this.apiBase} onentry-clicked={ (ev: CustomEvent<string>)=> navigate("./entry/" + ev.detail) } >
