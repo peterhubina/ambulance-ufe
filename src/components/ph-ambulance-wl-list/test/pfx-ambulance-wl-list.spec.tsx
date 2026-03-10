@@ -37,7 +37,7 @@ describe('ph-ambulance-wl-list', () => {
     // Set up the page with your component
     const page = await newSpecPage({
       components: [PhAmbulanceWlList],
-      html: `<ph-ambulance-wl-list ambulance-id="test-ambulance" api-base="http://test/api"></ph-ambulance-wl-list>`,
+      html: `<ph120805-ambulance-wl-list ambulance-id="test-ambulance" api-base="http://test/api"></ph120805-ambulance-wl-list>`,
     });
 
     const wlList = page.rootInstance as PhAmbulanceWlList;
@@ -76,7 +76,7 @@ describe('ph-ambulance-wl-list', () => {
 
     const page = await newSpecPage({
       components: [PhAmbulanceWlList],
-      html: `<ph-ambulance-wl-list ambulance-id="test-ambulance" api-base="http://test/api"></ph-ambulance-wl-list>`,
+      html: `<ph120805-ambulance-wl-list ambulance-id="test-ambulance" api-base="http://test/api"></ph120805-ambulance-wl-list>`,
     });
 
     await page.waitForChanges();
@@ -94,7 +94,7 @@ describe('ph-ambulance-wl-list', () => {
 
     const page = await newSpecPage({
       components: [PhAmbulanceWlList],
-      html: `<ph-ambulance-wl-list ambulance-id="test-ambulance" api-base="http://test/api"></ph-ambulance-wl-list>`,
+      html: `<ph120805-ambulance-wl-list ambulance-id="test-ambulance" api-base="http://test/api"></ph120805-ambulance-wl-list>`,
     });
 
     const wlList = page.rootInstance as PhAmbulanceWlList;
